@@ -3,6 +3,13 @@
 
 # citree
 
+[![](https://img.shields.io/badge/devel%20version-0.1.0-blue.svg)](https://github.com/blueskypie/citree)
+
+[![Project Status: Active - The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+
 This is a wrapper of
 [partykit::ctree()](https://rdrr.io/cran/partykit/man/ctree.html) with
 addition functions:
@@ -32,7 +39,7 @@ Note:
 
 See [manual](https://blueskypie.github.io/citree/reference/index.html)
 and
-[examples](https://blueskypie.github.io/cHeatmap/articles/citree-vignette.html)
+[examples](https://blueskypie.github.io/citree/articles/citree-vignette.html)
 
 ## Installation
 
