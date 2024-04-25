@@ -74,7 +74,7 @@
 <p>This is a wrapper of <a href="https://rdrr.io/cran/partykit/man/ctree.html" class="external-link">partykit::ctree()</a> with addition functions:</p>
 <ul>
 <li>
-<code><a href="https://rdrr.io/pkg/partykit/man/ctree.html" class="external-link">partykit::ctree()</a></code> only produces the best separation at each node, i.e. one tree. By setting <code>recursive = T</code>, all trees meeting p-val cutoff are produced and saved. Recursion is done by removing the 1st splitting variable from the input data.frame and running <code><a href="reference/runCtree.html">runCtree()</a></code> inside <code><a href="reference/runCtree.html">runCtree()</a></code>.</li>
+<code><a href="https://rdrr.io/pkg/partykit/man/ctree.html" class="external-link">partykit::ctree()</a></code> only produces the best separation at each node, i.e. one tree. By setting <code>recursive = T</code>, all trees meeting p-val cutoff are produced and can be examined to see which one makes more sense according to domain knowledge. Recursion is done by removing the 1st splitting variable from the input data.frame and running <code><a href="reference/runCtree.html">runCtree()</a></code> inside <code><a href="reference/runCtree.html">runCtree()</a></code>.</li>
 <li>The info and stats of each node of each tree are collected and summarized in an excel file, which also contains ULRs to each tree.</li>
 <li>Before running <code><a href="https://rdrr.io/pkg/partykit/man/ctree.html" class="external-link">partykit::ctree()</a></code>, low-informative columns and rows are removed to reduce computation and adjustment on association p-vals</li>
 </ul>
