@@ -26,8 +26,9 @@ addition functions:
 
 -   `partykit::ctree()` only produces the best separation at each node,
     i.e. one tree. By setting `recursive = T`, all trees meeting p-val
-    cutoff are produced and saved. Recursion is done by removing the 1st
-    splitting variable from the input data.frame and running
+    cutoff are produced and can be examined to see which one makes more 
+    sense according to domain knowledge. Recursion is done by removing 
+    the 1st splitting variable from the input data.frame and running
     `runCtree()` inside `runCtree()`.
 -   The info and stats of each node of each tree are collected and
     summarized in an excel file, which also contains ULRs to each tree.
