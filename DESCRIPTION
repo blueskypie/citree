@@ -1,5 +1,5 @@
 Package: citree
-Title: Recursively run conditional inference tree
+Title: Recursive conditional inference tree
 Version: 0.1.0
 Authors@R: 
     person("Jike", "Cui", , "16052330+blueskypie@users.noreply.github.com", 
@@ -17,5 +17,6 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
-URL: https://github.com/blueskypie/citree
+URL: https://github.com/blueskypie/citree,
+    https://blueskypie.github.io/citree/
 BugReports: https://github.com/blueskypie/citree/issues

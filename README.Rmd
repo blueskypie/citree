@@ -15,6 +15,11 @@ knitr::opts_chunk$set(
 
 # citree
 
+`r badger::badge_devel(color = "blue")`
+`r #badger::badge_travis("blueskypie/cHeatmap",is_commercial = T)`
+`r badger::badge_repostatus("Active")`
+`r badger::badge_lifecycle("stable")`
+
 This is a wrapper of
 [partykit::ctree()](https://rdrr.io/cran/partykit/man/ctree.html) with
 addition functions:
