@@ -48,7 +48,7 @@ Note:
     for discussions on the pros and cons of ctree in comparison to other
     trees, e.g. rpart.
 
-See [manual](https://blueskypie.github.io/citree/reference/index.html) and  [examples](https://blueskypie.github.io/cHeatmap/articles/citree-vignette.html)
+See [manual](https://blueskypie.github.io/citree/reference/index.html) and  [examples](https://blueskypie.github.io/citree/articles/citree-vignette.html)
 
 ## Installation
 

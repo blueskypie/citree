@@ -15,7 +15,8 @@ Imports:
     partykit
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    badger
 VignetteBuilder: knitr
 URL: https://github.com/blueskypie/citree,
     https://blueskypie.github.io/citree/
