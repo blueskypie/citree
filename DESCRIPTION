@@ -17,3 +17,5 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+URL: https://github.com/blueskypie/citree
+BugReports: https://github.com/blueskypie/citree/issues
