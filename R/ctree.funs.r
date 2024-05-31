@@ -91,7 +91,7 @@ runCtree=function(df1,cohort,oDir,yi=1,pCut=0.05,
     if(length(rInds)>9){
       #remove low-informative columns and row to reduce computation and
       # adjustment on association p-vals
-      df2=do.call(rmNAs,c(list('df1'=df1[rInds,]),naParas))
+      df2=do.call(rmNA,c(list('df1'=df1[rInds,]),naParas))
       df2=do.call(rmNZV,c(list('df1'=df2),nzvParas))
       # df2=rmNAs(df1[rInds,],2,naCut)
       # df2=rmNZV(df2)
