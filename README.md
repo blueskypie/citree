@@ -12,7 +12,7 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 
 This is a wrapper of
 [partykit::ctree()](https://rdrr.io/cran/partykit/man/ctree.html) with
-addition functions:
+additional functions:
 
 - `partykit::ctree()` only produces the best separation at each node,
   i.e. one tree. By setting `recursive = T`, all trees meeting p-val
