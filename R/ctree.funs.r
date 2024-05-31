@@ -144,7 +144,8 @@ runCtree=function(df1,cohort,oDir,yi=1,pCut=0.05,
             stopifnot(length(ind)==1)
             if(ncol(df2)>2){
               df2=df2[,-ind]
-              runCtree(df2,cohort,oDir,pCut=pCut,getReturn=F,gList = gList)
+              runCtree(df2,cohort,oDir,pCut=pCut,getReturn=F,gList = gList,
+                       ctrlParas=ctrlParas,naParas=naParas,nzvParas=nzvParas)
             }
           }
           if(run1) ret$stats=rmNA(gList$statDf)
