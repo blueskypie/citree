@@ -90,10 +90,11 @@ removed to reduce computation and adjustment on association p-vals</p></li>
 <span>  <span class="va">oDir</span>,</span>
 <span>  yi <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>  pCut <span class="op">=</span> <span class="fl">0.05</span>,</span>
-<span>  naCut <span class="op">=</span> <span class="fl">0.3</span>,</span>
 <span>  recursive <span class="op">=</span> <span class="cn">T</span>,</span>
 <span>  getReturn <span class="op">=</span> <span class="cn">T</span>,</span>
 <span>  ctrlParas <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>minsplit <span class="op">=</span> <span class="fl">10</span>, minbucket <span class="op">=</span> <span class="fl">5</span>, maxsurrogate <span class="op">=</span> <span class="fl">2</span>, alpha <span class="op">=</span> <span class="va">pCut</span><span class="op">)</span>,</span>
+<span>  naParas <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>margins <span class="op">=</span> <span class="fl">1</span>, maxNA.perc <span class="op">=</span> <span class="fl">0.95</span>, minNonNA.count <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>,</span>
+<span>  nzvParas <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>minUniPerc <span class="op">=</span> <span class="fl">0.05</span>, minUniCount <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>,</span>
 <span>  gList <span class="op">=</span> <span class="cn">NULL</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -124,10 +125,6 @@ is named as <code>paste0(oDir,.Platform$file.sep,cohort,'.xlsx')</code></p></li>
 <dd><p>p-val for significant association; not adjusted.</p></dd>
 
 
-<dt>naCut</dt>
-<dd><p>0-1; columns with &gt; naCut portion won't be considered.</p></dd>
-
-
 <dt>recursive</dt>
 <dd><p>logical;</p><ul><li><p>F: only produce the best tree</p></li>
 <li><p>T: produce all trees meeting <code>pCut</code></p></li>
@@ -141,6 +138,14 @@ it's also used to reduce the internal data transfer load if <code>recursive = T<
 
 <dt>ctrlParas</dt>
 <dd><p>list; parameters for <code><a href="https://rdrr.io/pkg/partykit/man/ctree_control.html" class="external-link">partykit::ctree_control()</a></code></p></dd>
+
+
+<dt>naParas</dt>
+<dd><p>list; parameters for <code><a href="rmNA.html">rmNA()</a></code></p></dd>
+
+
+<dt>nzvParas</dt>
+<dd><p>list; parameters for <code><a href="rmNZV.html">rmNZV()</a></code></p></dd>
 
 
 <dt>gList</dt>
