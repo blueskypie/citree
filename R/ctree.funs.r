@@ -157,7 +157,7 @@ runCtree=function(df1,cohort,oDir,yi=1,pCut=0.05,
   }
 
   if(run1 && is.data.frame(ret$stats)){
-    addURL2df(ret$stats,'plot','plot',fName = paste0(oDir,.Platform$file.sep,cohort))
+    addURL2df(ret$stats,'plot','plot',fName = paste0(oDir,.Platform$file.sep,cohort,'.',yName))
   }
 
   if(getReturn) return(ret)
