@@ -98,7 +98,7 @@ runCtree=function(df1,cohort,oDir,yi=1,pCut=0.05,
 
       for (i in 1:ncol(df2)) {
         # ctree cannot deal with char columns
-        if(is.character(df2[[i]]))
+        if(is.character(df2[[i]]) || is.logical(df2[[i]]))
           df2[[i]]=factor(df2[[i]],levels = sort(setdiff(unique(df2[[i]]),NA)))
       }
 
