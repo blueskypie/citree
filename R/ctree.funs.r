@@ -27,13 +27,14 @@
 #'     is named as `paste0(oDir,.Platform$file.sep,cohort,'.xlsx')`
 #' @param yi int; index of y variable
 #' @param pCut p-val for significant association; not adjusted.
-#' @param naCut 0-1; columns with > naCut portion won't be considered.
 #' @param recursive logical;
 #'    * F: only produce the best tree
 #'    * T: produce all trees meeting `pCut`
 #' @param getReturn logical; if T, return a list below; no returns otherwise.
 #'   it's also used to reduce the internal data transfer load if `recursive = T`.
 #' @param ctrlParas list; parameters for [partykit::ctree_control()]
+#' @param naParas list; parameters for [rmNA()]
+#' @param nzvParas list; parameters for [rmNZV()]
 #' @param gList a listenv list; it's for internal recursion tracking; users
 #'   should ignore this argument.
 #'
@@ -60,9 +61,11 @@
 #'
 #' @examples # none
 runCtree=function(df1,cohort,oDir,yi=1,pCut=0.05,
-                  naCut=0.3,recursive=T, getReturn=T,
+                  recursive=T, getReturn=T,
                   ctrlParas=list(minsplit= 10,minbucket = 5,maxsurrogate=2,
                                  alpha = pCut),
+                  naParas=list(margins=1,maxNA.perc=0.95, minNonNA.count=5),
+                  nzvParas=list(minUniPerc = 0.05,minUniCount=5),
                   gList=NULL){
 
   ret=list(df=NA,stats=NA)
@@ -79,16 +82,19 @@ runCtree=function(df1,cohort,oDir,yi=1,pCut=0.05,
     if(yi!=1){
       k=setdiff(1:ncol(df1),yi)
       df1=df1[,c(yi,k)]
+      yi=1
     }
 
     yName=colnames(df1)[yi]
-    rInds=which(!is.na(df1[,yi]))
+    rInds=which(!is.na(df1[[yi]]))
 
     if(length(rInds)>9){
       #remove low-informative columns and row to reduce computation and
       # adjustment on association p-vals
-      df2=rmNAs(df1[rInds,],2,naCut)
-      df2=rmNZV(df2)
+      df2=do.call(rmNAs,c(list('df1'=df1[rInds,]),naParas))
+      df2=do.call(rmNZV,c(list('df1'=df2),nzvParas))
+      # df2=rmNAs(df1[rInds,],2,naCut)
+      # df2=rmNZV(df2)
 
       for (i in 1:ncol(df2)) {
         # ctree cannot deal with char columns
@@ -277,7 +283,7 @@ ctree2splitInfo=function(cRe,pCut,nodeInds = partykit::nodeids(cRe, terminal = F
 #' @export
 #'
 #' @examples # none
-rmNAs=function(df1,margins=1,maxNA.perc=0.99, minNonNA.count=1){
+rmNA=function(df1,margins=1,maxNA.perc=0.95, minNonNA.count=5){
   d1=dim(df1)
   isM=is.matrix(df1)
   if(isM) df1=as.data.frame(df1) #in order to use df1[,-rmInds,F]

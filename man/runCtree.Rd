@@ -10,10 +10,11 @@ runCtree(
   oDir,
   yi = 1,
   pCut = 0.05,
-  naCut = 0.3,
   recursive = T,
   getReturn = T,
   ctrlParas = list(minsplit = 10, minbucket = 5, maxsurrogate = 2, alpha = pCut),
+  naParas = list(margins = 1, maxNA.perc = 0.95, minNonNA.count = 5),
+  nzvParas = list(minUniPerc = 0.05, minUniCount = 5),
   gList = NULL
 )
 }
@@ -34,8 +35,6 @@ is named as \code{paste0(oDir,.Platform$file.sep,cohort,'.xlsx')}
 
 \item{pCut}{p-val for significant association; not adjusted.}
 
-\item{naCut}{0-1; columns with > naCut portion won't be considered.}
-
 \item{recursive}{logical;
 \itemize{
 \item F: only produce the best tree
@@ -46,6 +45,10 @@ is named as \code{paste0(oDir,.Platform$file.sep,cohort,'.xlsx')}
 it's also used to reduce the internal data transfer load if \code{recursive = T}.}
 
 \item{ctrlParas}{list; parameters for \code{\link[partykit:ctree_control]{partykit::ctree_control()}}}
+
+\item{naParas}{list; parameters for \code{\link[=rmNA]{rmNA()}}}
+
+\item{nzvParas}{list; parameters for \code{\link[=rmNZV]{rmNZV()}}}
 
 \item{gList}{a listenv list; it's for internal recursion tracking; users
 should ignore this argument.}

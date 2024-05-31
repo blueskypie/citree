@@ -2,7 +2,7 @@
 
 export(addURL2df)
 export(ctree2splitInfo)
-export(rmNAs)
+export(rmNA)
 export(rmNZV)
 export(runCtree)
 importFrom(grDevices,dev.off)
