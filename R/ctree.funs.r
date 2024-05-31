@@ -93,7 +93,7 @@ runCtree=function(df1,cohort,oDir,yi=1,pCut=0.05,
       # adjustment on association p-vals
       df2=do.call(rmNA,c(list('df1'=df1[rInds,]),naParas))
       df2=do.call(rmNZV,c(list('df1'=df2),nzvParas))
-      # df2=rmNAs(df1[rInds,],2,naCut)
+      # df2=rmNA(df1[rInds,],2,naCut)
       # df2=rmNZV(df2)
 
       for (i in 1:ncol(df2)) {
@@ -147,7 +147,7 @@ runCtree=function(df1,cohort,oDir,yi=1,pCut=0.05,
               runCtree(df2,cohort,oDir,pCut=pCut,getReturn=F,gList = gList)
             }
           }
-          if(run1) ret$stats=rmNAs(gList$statDf)
+          if(run1) ret$stats=rmNA(gList$statDf)
         }else if(is.null(gList$counter)){
           warning('no tree fitting the pCut is found for ', yName, '; try increasing pCut!')
         }
@@ -303,7 +303,7 @@ rmNA=function(df1,margins=1,maxNA.perc=0.95, minNonNA.count=5){
   k=d1 - dim(df1)
   if(max(k)>0){
     k=paste(k,c('rows','columns'), collapse = ' and ')
-    warning(k,' are removed by rmNAs()!')
+    warning(k,' are removed by rmNA()!')
   }
 
   df1
