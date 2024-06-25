@@ -3,7 +3,7 @@ pkgdown: 2.0.9
 pkgdown_sha: ~
 articles:
   citree-vignette: citree-vignette.html
-last_built: 2024-05-31T17:01Z
+last_built: 2024-06-25T20:09Z
 urls:
   reference: https://blueskypie.github.io/citree/reference
   article: https://blueskypie.github.io/citree/articles
