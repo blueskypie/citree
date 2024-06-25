@@ -10,12 +10,12 @@ state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 
-This is a wrapper of
+The main function is `citree::runCtree()`, which is a wrapper of
 [partykit::ctree()](https://rdrr.io/cran/partykit/man/ctree.html) with
 additional functions:
 
 - `partykit::ctree()` only produces the best separation at each node,
-  i.e. one tree. By setting `recursive = T`, all trees meeting p-val
+  i.e. one tree. By setting `recursive = T` in `citree::runCtree()`, all trees meeting p-val
   cutoff are produced and can be examined to see which one makes more
   sense according to domain knowledge. Recursion is done by removing the
   1st splitting variable from the input data.frame and running
