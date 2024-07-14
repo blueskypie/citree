@@ -3,7 +3,7 @@
 
 # citree
 
-[![](https://img.shields.io/badge/devel%20version-0.1.0-blue.svg)](https://github.com/blueskypie/citree)
+[![](https://img.shields.io/badge/devel%20version-0.1.1-blue.svg)](https://github.com/blueskypie/citree)
 
 [![Project Status: Active - The project has reached a stable, usable
 state and is being actively
