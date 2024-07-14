@@ -91,6 +91,9 @@ the df1 and running \code{runCtree()} inside \code{runCtree()}.
 in an excel file, which also contains ULRs to each tree.
 \item Before running \code{partykit::ctree()}, low-informative columns and rows are
 removed to reduce computation and adjustment on association p-vals
+\item Cases leading to crashes of \code{partykit::ctree()} are handled, e.g. \code{Inf}
+and \code{-Inf} are converted to \code{NA} to avoid the following errors:
+" 'breaks' are not unique"
 }
 }
 \details{

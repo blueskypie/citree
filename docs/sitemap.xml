@@ -1,48 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>/articles/citree-vignette.html</loc>
-  </url>
-  <url>
-    <loc>/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/news/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/addURL2df.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ctree2splitInfo.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/rmNA.html</loc>
-  </url>
-  <url>
-    <loc>/reference/rmNAs.html</loc>
-  </url>
-  <url>
-    <loc>/reference/rmNZV.html</loc>
-  </url>
-  <url>
-    <loc>/reference/runCtree.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://blueskypie.github.io/citree/404.html</loc></url>
+<url><loc>https://blueskypie.github.io/citree/LICENSE-text.html</loc></url>
+<url><loc>https://blueskypie.github.io/citree/LICENSE.html</loc></url>
+<url><loc>https://blueskypie.github.io/citree/articles/citree-vignette.html</loc></url>
+<url><loc>https://blueskypie.github.io/citree/articles/index.html</loc></url>
+<url><loc>https://blueskypie.github.io/citree/authors.html</loc></url>
+<url><loc>https://blueskypie.github.io/citree/index.html</loc></url>
+<url><loc>https://blueskypie.github.io/citree/news/index.html</loc></url>
+<url><loc>https://blueskypie.github.io/citree/reference/addURL2df.html</loc></url>
+<url><loc>https://blueskypie.github.io/citree/reference/ctree2splitInfo.html</loc></url>
+<url><loc>https://blueskypie.github.io/citree/reference/index.html</loc></url>
+<url><loc>https://blueskypie.github.io/citree/reference/rmNA.html</loc></url>
+<url><loc>https://blueskypie.github.io/citree/reference/rmNAs.html</loc></url>
+<url><loc>https://blueskypie.github.io/citree/reference/rmNZV.html</loc></url>
+<url><loc>https://blueskypie.github.io/citree/reference/runCtree.html</loc></url>
 </urlset>
+

@@ -34,7 +34,10 @@ addition functions:
     summarized in an excel file, which also contains ULRs to each tree.
 -   Before running `partykit::ctree()`, low-informative columns and rows
     are removed to reduce computation and adjustment on association
-    p-vals
+    p-vals.
+-   Cases leading to crashes of `partykit::ctree()` are handled, e.g. `Inf` 
+    and `-Inf` are converted to `NA` to avoid the following errors:
+    " 'breaks' are not unique".
 
 Note:
 

@@ -10,6 +10,9 @@
 #'     in an excel file, which also contains ULRs to each tree.
 #'    * Before running `partykit::ctree()`, low-informative columns and rows are
 #'     removed to reduce computation and adjustment on association p-vals
+#'    * Cases leading to crashes of `partykit::ctree()` are handled, e.g. `Inf`
+#'     and `-Inf` are converted to `NA` to avoid the following errors:
+#'      " 'breaks' are not unique"
 #'
 #' Note:
 #'    * packages `partykit` and `openxlsx` are loaded, but not attached, in this function.
@@ -97,8 +100,16 @@ runCtree=function(df1,cohort,oDir,yi=1,pCut=0.05,
       # df2=rmNZV(df2)
 
       for (i in 1:ncol(df2)) {
+        # partykit::extree_data cannot deal with Inf, causing error
+        # "Error in interval.numeric(x, breaks = c(xmin - tol, ux, xmax)) :
+        # 'breaks' are not unique"
+        # here reset Inf as NA
+        if(is.numeric(df2[[i]])){
+          df2[[i]][which(is.infinite(df2[[i]]))]=NA
+        }
+
         # ctree cannot deal with char columns
-        if(is.character(df2[[i]]) || is.logical(df2[[i]]))
+        else if(is.character(df2[[i]]) || is.logical(df2[[i]]))
           df2[[i]]=factor(df2[[i]],levels = sort(setdiff(unique(df2[[i]]),NA)))
       }
 
