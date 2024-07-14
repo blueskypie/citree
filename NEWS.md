@@ -1,7 +1,5 @@
 # citree 0.1.1
 
-* converted `Inf` to `NA` to avoid crash.
-
-# citree 0.1.0
-
-* Added a `NEWS.md` file to track changes to the package.
+* Cases leading to crashes of `partykit::ctree()` are handled, e.g. `Inf`
+     and `-Inf` are converted to `NA` to avoid the following errors:
+      " 'breaks' are not unique"
