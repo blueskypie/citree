@@ -1,10 +1,9 @@
 pandoc: 3.1.11
-pkgdown: 2.0.9
+pkgdown: 2.1.0
 pkgdown_sha: ~
 articles:
   citree-vignette: citree-vignette.html
-last_built: 2024-06-25T20:09Z
+last_built: 2024-07-14T16:05Z
 urls:
   reference: https://blueskypie.github.io/citree/reference
   article: https://blueskypie.github.io/citree/articles
-
