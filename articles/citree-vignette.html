@@ -76,9 +76,10 @@ with addition functions:</p>
 <code><a href="https://rdrr.io/pkg/partykit/man/ctree.html" class="external-link">partykit::ctree()</a></code> only produces the best separation at
 each node, i.e. one tree. By setting <code>recursive = T</code> in
 <code><a href="../reference/runCtree.html">citree::runCtree()</a></code>, all trees meeting p-val cutoff are
-produced and saved. Recursion is done by removing the 1st splitting
-variable from the input data.frame and running <code><a href="../reference/runCtree.html">runCtree()</a></code>
-inside <code><a href="../reference/runCtree.html">runCtree()</a></code>.</li>
+produced and saved. Each round of recursion is done by removing the 1st
+splitting variable from the input data.frame and running
+<code><a href="../reference/runCtree.html">runCtree()</a></code>; the recursion stops if no splitting variable is
+found.</li>
 <li>The info and stats of each node of each tree are collected and
 summarized in an excel file, which also contains ULRs to each tree.</li>
 <li>Before running <code><a href="https://rdrr.io/pkg/partykit/man/ctree.html" class="external-link">partykit::ctree()</a></code>, low-informative
