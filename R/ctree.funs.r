@@ -4,8 +4,9 @@
 #' The [partykit::ctree()] function only gives the best separation at each node,
 #' i.e. one tree. This wrapper provides the following supports:
 #'    * By setting `recursive = T`, all trees meeting p-val cutoff are produced
-#'     and saved. Recursion is done by removing the 1st splitting variable from
-#'     the df1 and running `runCtree()` inside `runCtree()`.
+#'     and saved. Each round of recursion is done by removing
+#'     the 1st splitting variable from the input data.frame and running
+#'     `runCtree()`; the recursion stops if no splitting variable is found.
 #'    * The info and stats of each node of each tree are collected and summarized
 #'     in an excel file, which also contains ULRs to each tree.
 #'    * Before running `partykit::ctree()`, low-informative columns and rows are

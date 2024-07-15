@@ -85,8 +85,9 @@ The \code{\link[partykit:ctree]{partykit::ctree()}} function only gives the best
 i.e. one tree. This wrapper provides the following supports:
 \itemize{
 \item By setting \code{recursive = T}, all trees meeting p-val cutoff are produced
-and saved. Recursion is done by removing the 1st splitting variable from
-the df1 and running \code{runCtree()} inside \code{runCtree()}.
+and saved. Each round of recursion is done by removing
+the 1st splitting variable from the input data.frame and running
+\code{runCtree()}; the recursion stops if no splitting variable is found.
 \item The info and stats of each node of each tree are collected and summarized
 in an excel file, which also contains ULRs to each tree.
 \item Before running \code{partykit::ctree()}, low-informative columns and rows are
