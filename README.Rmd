@@ -19,12 +19,12 @@ knitr::opts_chunk$set(
 `r badger::badge_repostatus("Active")`
 `r badger::badge_lifecycle("stable")`
 
-This is a wrapper of
+The main function of this package is `runCtree()`, which is a wrapper of
 [partykit::ctree()](https://rdrr.io/cran/partykit/man/ctree.html) with
 addition functions:
 
 -   `partykit::ctree()` only produces the best separation at each node,
-    i.e. one tree. By setting `recursive = T`, all trees meeting p-val
+    i.e. one tree. By setting `runCtree(recursive = T)`, all trees meeting p-val
     cutoff are produced and can be examined to see which one makes more 
     sense according to domain knowledge. Each round of recursion is done by removing 
     the 1st splitting variable from the input data.frame and running
