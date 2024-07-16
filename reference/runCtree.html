@@ -7,8 +7,8 @@ the 1st splitting variable from the input data.frame and running
 runCtree(); the recursion stops if no splitting variable is found.
 The info and stats of each node of each tree are collected and summarized
 in an excel file, which also contains ULRs to each tree.
-Before running partykit::ctree(), low-informative columns and rows are
-removed to reduce computation and adjustment on association p-vals
+Before running partykit::ctree(),  rmNA() and rmNZV() are run to
+remove low-informative columns and rows to reduce computation and adjustment on association p-vals
 Cases leading to crashes of partykit::ctree() are handled, e.g. Inf
 and -Inf are converted to NA to avoid the following errors:
 &quot; 'breaks' are not unique&quot;
@@ -21,8 +21,8 @@ the 1st splitting variable from the input data.frame and running
 runCtree(); the recursion stops if no splitting variable is found.
 The info and stats of each node of each tree are collected and summarized
 in an excel file, which also contains ULRs to each tree.
-Before running partykit::ctree(), low-informative columns and rows are
-removed to reduce computation and adjustment on association p-vals
+Before running partykit::ctree(),  rmNA() and rmNZV() are run to
+remove low-informative columns and rows to reduce computation and adjustment on association p-vals
 Cases leading to crashes of partykit::ctree() are handled, e.g. Inf
 and -Inf are converted to NA to avoid the following errors:
 &quot; 'breaks' are not unique&quot;
@@ -73,8 +73,8 @@ the 1st splitting variable from the input data.frame and running
 <code>runCtree()</code>; the recursion stops if no splitting variable is found.</p></li>
 <li><p>The info and stats of each node of each tree are collected and summarized
 in an excel file, which also contains ULRs to each tree.</p></li>
-<li><p>Before running <code><a href="https://rdrr.io/pkg/partykit/man/ctree.html" class="external-link">partykit::ctree()</a></code>, low-informative columns and rows are
-removed to reduce computation and adjustment on association p-vals</p></li>
+<li><p>Before running <code><a href="https://rdrr.io/pkg/partykit/man/ctree.html" class="external-link">partykit::ctree()</a></code>,  <code><a href="rmNA.html">rmNA()</a></code> and <code><a href="rmNZV.html">rmNZV()</a></code> are run to
+remove low-informative columns and rows to reduce computation and adjustment on association p-vals</p></li>
 <li><p>Cases leading to crashes of <code><a href="https://rdrr.io/pkg/partykit/man/ctree.html" class="external-link">partykit::ctree()</a></code> are handled, e.g. <code>Inf</code>
 and <code>-Inf</code> are converted to <code>NA</code> to avoid the following errors:
 " 'breaks' are not unique"</p></li>
@@ -141,11 +141,11 @@ it's also used to reduce the internal data transfer load if <code>recursive = T<
 
 
 <dt id="arg-naparas">naParas<a class="anchor" aria-label="anchor" href="#arg-naparas"></a></dt>
-<dd><p>list; parameters for <code><a href="rmNA.html">rmNA()</a></code></p></dd>
+<dd><p>list; parameters for <code><a href="rmNA.html">rmNA()</a></code>; set to <code>NULL</code> to skip this step.</p></dd>
 
 
 <dt id="arg-nzvparas">nzvParas<a class="anchor" aria-label="anchor" href="#arg-nzvparas"></a></dt>
-<dd><p>list; parameters for <code><a href="rmNZV.html">rmNZV()</a></code></p></dd>
+<dd><p>list; parameters for <code><a href="rmNZV.html">rmNZV()</a></code>; set to <code>NULL</code> to skip this step.</p></dd>
 
 
 <dt id="arg-glist">gList<a class="anchor" aria-label="anchor" href="#arg-glist"></a></dt>
