@@ -46,9 +46,9 @@ it's also used to reduce the internal data transfer load if \code{recursive = T}
 
 \item{ctrlParas}{list; parameters for \code{\link[partykit:ctree_control]{partykit::ctree_control()}}}
 
-\item{naParas}{list; parameters for \code{\link[=rmNA]{rmNA()}}}
+\item{naParas}{list; parameters for \code{\link[=rmNA]{rmNA()}}; set to \code{NULL} to skip this step.}
 
-\item{nzvParas}{list; parameters for \code{\link[=rmNZV]{rmNZV()}}}
+\item{nzvParas}{list; parameters for \code{\link[=rmNZV]{rmNZV()}}; set to \code{NULL} to skip this step.}
 
 \item{gList}{a listenv list; it's for internal recursion tracking; users
 should ignore this argument.}
@@ -90,8 +90,8 @@ the 1st splitting variable from the input data.frame and running
 \code{runCtree()}; the recursion stops if no splitting variable is found.
 \item The info and stats of each node of each tree are collected and summarized
 in an excel file, which also contains ULRs to each tree.
-\item Before running \code{partykit::ctree()}, low-informative columns and rows are
-removed to reduce computation and adjustment on association p-vals
+\item Before running \code{partykit::ctree()},  \code{\link[=rmNA]{rmNA()}} and \code{\link[=rmNZV]{rmNZV()}} are run to
+remove low-informative columns and rows to reduce computation and adjustment on association p-vals
 \item Cases leading to crashes of \code{partykit::ctree()} are handled, e.g. \code{Inf}
 and \code{-Inf} are converted to \code{NA} to avoid the following errors:
 " 'breaks' are not unique"
