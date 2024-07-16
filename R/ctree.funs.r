@@ -9,8 +9,8 @@
 #'     `runCtree()`; the recursion stops if no splitting variable is found.
 #'    * The info and stats of each node of each tree are collected and summarized
 #'     in an excel file, which also contains ULRs to each tree.
-#'    * Before running `partykit::ctree()`, low-informative columns and rows are
-#'     removed to reduce computation and adjustment on association p-vals
+#'    * Before running `partykit::ctree()`,  [rmNA()] and [rmNZV()] are run to
+#'     remove low-informative columns and rows to reduce computation and adjustment on association p-vals
 #'    * Cases leading to crashes of `partykit::ctree()` are handled, e.g. `Inf`
 #'     and `-Inf` are converted to `NA` to avoid the following errors:
 #'      " 'breaks' are not unique"
@@ -37,8 +37,8 @@
 #' @param getReturn logical; if T, return a list below; no returns otherwise.
 #'   it's also used to reduce the internal data transfer load if `recursive = T`.
 #' @param ctrlParas list; parameters for [partykit::ctree_control()]
-#' @param naParas list; parameters for [rmNA()]
-#' @param nzvParas list; parameters for [rmNZV()]
+#' @param naParas list; parameters for [rmNA()]; set to `NULL` to skip this step.
+#' @param nzvParas list; parameters for [rmNZV()]; set to `NULL` to skip this step.
 #' @param gList a listenv list; it's for internal recursion tracking; users
 #'   should ignore this argument.
 #'
@@ -95,8 +95,9 @@ runCtree=function(df1,cohort,oDir,yi=1,pCut=0.05,
     if(length(rInds)>9){
       #remove low-informative columns and row to reduce computation and
       # adjustment on association p-vals
-      df2=do.call(rmNA,c(list('df1'=df1[rInds,]),naParas))
-      df2=do.call(rmNZV,c(list('df1'=df2),nzvParas))
+      df2=df1
+      if(!is.null(naParas)) df2=do.call(rmNA,c(list('df1'=df2[rInds,]),naParas))
+      if(!is.null(nzvParas)) df2=do.call(rmNZV,c(list('df1'=df2),nzvParas))
       # df2=rmNA(df1[rInds,],2,naCut)
       # df2=rmNZV(df2)
 
