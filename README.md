@@ -36,7 +36,9 @@ Note:
   [here](https://cran.r-project.org/web/packages/coin/vignettes/LegoCondInf.pdf)
   for theory behind the test, and
   [here](https://stats.stackexchange.com/questions/404589/ctree-in-r-how-optimal-is-the-optimal-split-point)
-  for an explanation of the algorithm.
+  for an explanation of the algorithm, and
+  [here](https://martinschweinberger.github.io/TreesUBonn/) for a nice
+  tutorial.
 - see
   [here](https://stats.stackexchange.com/questions/12140/conditional-inference-trees-vs-traditional-decision-trees)
   for discussions on the pros and cons of ctree in comparison to other
@@ -60,7 +62,7 @@ devtools::install_github("blueskypie/citree")
 ``` r
 library(citree)
 data('mtcars')
-re=runCtree(mtcars,'mtcars',oDir='tmp',yi=1,pCut=0.05,naCut=0.3,recursive=T)
+re=runCtree(mtcars,'mtcars',oDir='tmp')
 ```
 
 check the `tmp` directory for output.

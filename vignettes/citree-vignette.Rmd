@@ -52,6 +52,6 @@ knitr::opts_chunk$set(
 ```{r, eval = FALSE}
 library(citree)
 data('mtcars')
-re=runCtree(mtcars,'mtcars',oDir='tmp',yi=1,pCut=0.05,naCut=0.3,recursive=T)
+re=runCtree(mtcars,'mtcars',oDir='tmp')
 ```
 check the `tmp` directory for output.
