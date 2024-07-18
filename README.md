@@ -3,7 +3,7 @@
 
 # citree
 
-[![](https://img.shields.io/badge/devel%20version-0.1.1-blue.svg)](https://github.com/blueskypie/citree)
+[![](https://img.shields.io/badge/devel%20version-0.1.2-blue.svg)](https://github.com/blueskypie/citree)
 [![Project Status: Active - The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
@@ -14,12 +14,12 @@ The main function of this package is `runCtree()`, which is a wrapper of
 addition functions:
 
 - `partykit::ctree()` only produces the best separation at each node,
-  i.e. one tree. By setting `runCtree(recursive = T)`, all trees meeting
-  p-val cutoff are produced and can be examined to see which one makes
-  more sense according to domain knowledge. Each round of recursion is
-  done by removing the 1st splitting variable from the input data.frame
-  and running `runCtree()`; the recursion stops if no splitting variable
-  is found.
+  i.e. one tree. By setting `recursive = T` in `runCtree()`, all trees
+  meeting p-val cutoff are produced and can be examined to see which one
+  makes more sense according to domain knowledge. Each round of
+  recursion is done by removing the 1st splitting variable from the
+  input data.frame and running `runCtree()`; the recursion stops if no
+  splitting variable is found.
 - The info and stats of each node of each tree are collected and
   summarized in an excel file, which also contains ULRs to each tree.
 - Before running `partykit::ctree()`, low-informative columns and rows
